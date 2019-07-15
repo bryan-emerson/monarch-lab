@@ -24,19 +24,23 @@ const kingdomData = kingdomRaw.map(kingdom => {
 console.log(kingdomData)
 
 Monarch.remove({})
-Monarch.create(monarchData)
-    .then(monarchs => {
-        console.log(monarchData)
-    })
-    .catch(err => {
-        console.log(err)
+    .then(() => {
+        Monarch.create(monarchData)
+            .then(monarchs => {
+                console.log(monarchData)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     })
 
 Kingdom.remove({})
-Kingdom.create(kingdomData)
-    .then(kingdoms => {
-        console.log(kingdomData)
-    })
-    .catch(err => {
-        console.log(err)
+    .then(() => {
+        Kingdom.create(kingdomData)
+            .then(kingdoms => {
+                console.log(kingdomData)
+            })
+            .catch(err => {
+                console.log(err)
+            })
     })
