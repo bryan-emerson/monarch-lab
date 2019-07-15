@@ -14,10 +14,28 @@ const monarchData = monarchRaw.map(monarch => {
     return newMonarch
 })
 
+const kingdomData = kingdomRaw.map(kingdom => {
+    const newKingdom = {}
+    newKingdom.title = kingdom.title
+    newKingdom.extract = kingdom.extract
+    return newKingdom
+})
+
+console.log(kingdomData)
+
 Monarch.remove({})
 Monarch.create(monarchData)
     .then(monarchs => {
         console.log(monarchData)
+    })
+    .catch(err => {
+        console.log(err)
+    })
+
+Kingdom.remove({})
+Kingdom.create(kingdomData)
+    .then(kingdoms => {
+        console.log(kingdomData)
     })
     .catch(err => {
         console.log(err)

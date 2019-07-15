@@ -2,11 +2,7 @@ const mongoose = require("../db/connection");
 
 const kingdomSchema = new mongoose.Schema({
   title: String,
-  extract: String,
-  coordinates: {
-    lat: Number,
-    lon: Number
-  }
+  extract: String
 });
 
 const Kingdom = mongoose.model("Kingdom", kingdomSchema);
