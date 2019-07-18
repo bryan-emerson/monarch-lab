@@ -21,8 +21,6 @@ const kingdomData = kingdomRaw.map(kingdom => {
     return newKingdom
 })
 
-console.log(kingdomData)
-
 Monarch.remove({})
     .then(() => {
         Monarch.create(monarchData)

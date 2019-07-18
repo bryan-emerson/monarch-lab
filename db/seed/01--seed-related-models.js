@@ -13,7 +13,7 @@ Monarch.find({})
             // console.log(monarchJSON)
             Kingdom.findOne({ title: monarchJSON.kingdom })
                 .then(kingdom => {
-                    console.log(kingdom)
+                    // console.log(kingdom)
                     monarch.kingdom = kingdom._id
                     monarch.save()
                 })
