@@ -8,12 +8,9 @@ Monarch.find({})
     .then(monarchs => {
         console.log(monarchs)
         monarchs.forEach(monarch => {
-            // console.log(monarch)
             let monarchJSON = monarchRaw.find(monarchJSON => monarchJSON.name === monarch.name)
-            // console.log(monarchJSON)
             Kingdom.findOne({ title: monarchJSON.kingdom })
                 .then(kingdom => {
-                    // console.log(kingdom)
                     monarch.kingdom = kingdom._id
                     monarch.save()
                 })
